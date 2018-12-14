@@ -1,23 +1,24 @@
 body {
-  /*background-image: url("C:/new-new/images/books.jpg");
-  box-shadow: inset 0 0 0 1000px rgb(0, 48, 78);*/
-  background-color: rgb(0, 48, 78);
+
+  background-image: url("../../images/news_2013_binarywalk_web.png");
+  background-image: linear-gradient(to right, rgba(0, 48, 78, 0), rgba(0, 48, 78, 20)), url("../../images/news_2013_binarywalk_web.png");
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+
 }
 
-/*#backDiv {
-  background-image: url("C:/new-new/images/books.jpg"),
-  linear-gradient( rgb(0, 48, 78), rgb(2, 64, 102));
-}*/
-
 header {
-  background-color: rgb(79, 81, 75);
+  background-color: ;
   height: 65px;
   color: white;
   font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
   font-size: 40px;
   font-weight: bold;
   padding-left: 25px;
-  border-bottom: rgb(32, 32, 32) solid;
+  background-color: rgb(0, 48, 78);
+  border-bottom: rgb(1, 36, 58) solid;
 }
 
 #stream {
@@ -42,10 +43,10 @@ footer {
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: rgb(0, 48, 78);
-  opacity: 75%;
+  background-color: rgb(79, 81, 75);
   text-align: center;
-  border-top: rgb(1, 36, 58) solid;
+  border-top: rgb(32, 32, 32) solid;
+  color: rgb(177, 175, 175);
 }
 
 /* This is for the weather div.*/
@@ -67,7 +68,12 @@ footer {
 
 /* Medium devices (tablets, 768px and up)*/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+  #mapArea{
+    margin-right: 127px;
+  }
+}
 
 /* Large devices (desktops, 992px and up)*/
 
