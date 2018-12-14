@@ -16,14 +16,15 @@ body {
 }
 
 header {
-  background-color: rgb(79, 81, 75);
+  background-color: ;
   height: 65px;
   color: white;
   font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
   font-size: 40px;
   font-weight: bold;
   padding-left: 25px;
-  border-bottom: rgb(32, 32, 32) solid;
+  background-color: rgb(0, 48, 78);
+  border-bottom: rgb(1, 36, 58) solid;
 }
 
 #stream {
@@ -43,14 +44,28 @@ header {
 
 footer {
   position: absolute;
+  float: clear; 
   bottom: 0;
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: rgb(0, 48, 78);
-  opacity: 75%;
+  background-color: rgb(79, 81, 75);
   text-align: center;
-  border-top: rgb(1, 36, 58) solid;
+  border-top: rgb(32, 32, 32) solid;
+  color: rgb(177, 175, 175);
+}
+
+/* This is for the weather div.*/
+
+.bg-primary {
+  color: white; 
+  background-color:#4d9900 !important; 
+  font-size: 20px;
+  margin-top: 75px; 
+}
+
+.smallText {
+  font-size: 15px; 
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -59,7 +74,12 @@ footer {
 
 /* Medium devices (tablets, 768px and up)*/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+  #mapArea{
+    margin-right: 127px;
+  }
+}
 
 /* Large devices (desktops, 992px and up)*/
 
