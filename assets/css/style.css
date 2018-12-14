@@ -38,6 +38,7 @@ header {
 
 footer {
   position: absolute;
+  float: clear; 
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -46,6 +47,19 @@ footer {
   text-align: center;
   border-top: rgb(32, 32, 32) solid;
   color: rgb(177, 175, 175);
+}
+
+/* This is for the weather div.*/
+
+.bg-primary {
+  color: white; 
+  background-color:#4d9900 !important; 
+  font-size: 20px;
+  margin-top: 75px; 
+}
+
+.smallText {
+  font-size: 15px; 
 }
 
 /* Small devices (landscape phones, 576px and up)*/

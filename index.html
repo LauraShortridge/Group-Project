@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
     <meta charset="utf-8" />
@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="#"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,12 +46,22 @@
         <hr class="my-4">
         <!-- add map here -->
     </div>
-    <!--  </div>  -->
+
+    </div>
+    <div class="container">
+        <div class="card bg-primary" style="width: 400px; height: 365px;">
+            <div class="card-body text-center mt-4" id="weather-report">
+                <h1 class="text-center">Current Weather</h1>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <span class="text-muted">Copyright</span>
         </div>
     </footer>
+    <script src="assets/javascript/weather.js"></script>
 </body>
 
 </html>
