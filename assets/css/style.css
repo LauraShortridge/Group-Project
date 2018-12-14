@@ -7,7 +7,7 @@ body {
   height: 100%;
   /* width: 100%; */
   background-image: url("../../images/news_2013_binarywalk_web.png");
-  background-image: linear-gradient(to right, rgba(0, 48, 78, 0), rgba(0, 48, 78, 20)), url("../../images/news_2013_binarywalk_web.png");
+  background-image: linear-gradient(to right, rgba(0, 48, 78, 0), rgba(0, 48, 78, .7)), url("../../images/news_2013_binarywalk_web.png");
   background-size: cover;
   /* <------ */
   background-repeat: no-repeat;
