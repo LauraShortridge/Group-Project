@@ -1,10 +1,12 @@
 body {
+
   background-image: url("../../images/news_2013_binarywalk_web.png");
   background-image: linear-gradient(to right, rgba(0, 48, 78, 0), rgba(0, 48, 78, 20)), url("../../images/news_2013_binarywalk_web.png");
   background-size: cover;
   /* <------ */
   background-repeat: no-repeat;
   background-position: center center;
+
 }
 
 header {
