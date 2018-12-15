@@ -45,6 +45,7 @@
         </div>
         <hr class="my-4">
         <!-- add map here -->
+            <div id="map"></div>
     </div>
 
     <div class="container">
@@ -62,7 +63,15 @@
         </div>
     </footer>
 
+    <script src="assets/javascript/map.js"></script>
+
     <script src="assets/javascript/weather.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG4R4gTvPxwGH_Cf_6ISyvdoVw9dDHO-0&libraries=places&callback=initMap" async
+        defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
 </body>
 
 </html>
