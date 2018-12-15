@@ -48,11 +48,14 @@
             <!-- add map here -->
         </div>
 
+
         <div class="container" id="weatherDiv">
             <div class="card bg-primary" style="width: 400px; height: 365px;">
                 <div class="card-body text-center mt-4" id="weather-report">
                     <h2 class="text-center">Current Weather</h2>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -65,7 +68,15 @@
         </div>
     </footer>
 
+    <script src="assets/javascript/map.js"></script>
+
     <script src="assets/javascript/weather.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG4R4gTvPxwGH_Cf_6ISyvdoVw9dDHO-0&libraries=places&callback=initMap" async
+        defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
 </body>
 
 </html>
