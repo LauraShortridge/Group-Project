@@ -28,38 +28,43 @@
             <a href="https://twitter.com/cwru"><i class="fab fa-twitter-square" id="stream"></i></a>
             <a href="https://www.instagram.com/cwru/"><i class="fab fa-instagram" id="stream"></i></a>
             <a href="https://www.facebook.com/casewesternreserve/"><i class="fab fa-facebook-square" id="stream"></i></a>
-        </p>
+            </p>
     </header>
 
     <!-- <div class="stuff"> -->
-    <div class="jumbotron" id="mapArea">
-        <h1 class="display-4">Welcome to Just inCASE</h1>
-        <p class="lead">Just type in the building on campus you are visiting.</p>
-        <hr class="my-4">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Building Name" aria-label="Building name"
-                aria-describedby="button-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Get Directions <i class="fas fa-car"></i></button>
+    <div id="content">
+        <div class="jumbotron" id="mapArea">
+            <h1 class="display-4">Welcome to Just inCASE</h1>
+            <p class="lead">Just type in the building on campus you are visiting.</p>
+            <hr class="my-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Building Name" aria-label="Building name"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Get Directions <i class="fas fa-car"></i></button>
+                </div>
             </div>
+            <hr class="my-4">
+            <!-- add map here -->
         </div>
-        <hr class="my-4">
-        <!-- add map here -->
-            <div id="map"></div>
-    </div>
-    <!-- Weather Div -->
-    <div class="container">
-        <div class="card bg-primary" style="width: 400px; height: 365px;">
-            <div class="card-body text-center mt-4" id="weather-report">
-                <h1 class="text-center">Current Weather</h1>
-            </div>
-        </div>
-    </div>
-    <!-- </div> -->
 
-    <footer class="footer fixed-bottom t-5">
+
+        <div class="container" id="weatherDiv">
+            <div class="card bg-primary" style="width: 400px; height: 365px;">
+                <div class="card-body text-center mt-4" id="weather-report">
+                    <h2 class="text-center">Current Weather</h2>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer fixed-bottom">
         <div class="container">
-            <span class="text-muted">Copyright</span>
+            <!-- <span class="text-muted">Copyright</span> -->
+            <span>Copyright</span>
         </div>
     </footer>
 
