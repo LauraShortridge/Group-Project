@@ -3,7 +3,7 @@
 let weatherDiv; 
 
 $(document).ready(function getWeather() {
-  let queryURL = "http://api.openweathermap.org/data/2.5/weather?id=5152599&units=imperial&APPID=59fa64a59c523e5cf75b9209eba9344f"
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?id=5152599&units=imperial&APPID=59fa64a59c523e5cf75b9209eba9344f"
 
   $.ajax({
     url: queryURL,
