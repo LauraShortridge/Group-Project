@@ -46,8 +46,13 @@ a.visited, a.hover {
 }
 
 #mapArea {
+<<<<<<< Updated upstream
   max-width: 95%;
   width: 750px;
+=======
+  /* width: 750px; */
+  /* max-width: 95%; */
+>>>>>>> Stashed changes
   height: auto;
   float: right;
   margin-top: 75px;
@@ -73,8 +78,13 @@ footer {
 
 .bg-primary {
   max-width: 95%;
+<<<<<<< Updated upstream
   color: white;
   background-color: rgba(25, 38, 12, 0.37) !important;
+=======
+  color: white; 
+  background-color: rgba(25, 38, 12, 0.37) !important; 
+>>>>>>> Stashed changes
   font-size: 20px;
   margin-top: 75px;
 }
@@ -107,6 +117,13 @@ footer {
 
 @media (min-width: 768px) {
 
+  #mapArea{
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -114,15 +131,18 @@ footer {
 @media (min-width: 992px) {
   #mapArea {
     margin-right: 25px;
+    width: 750px;    
   }
   #weatherDiv {
     margin-left: 25px;
   }
   .bg-primary {
     margin-top: 75px;
+
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
