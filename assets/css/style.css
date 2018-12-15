@@ -17,7 +17,6 @@ body {
 }
 
 header {
-  background-color: ;
   height: 65px;
   color: white;
   font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
@@ -28,6 +27,18 @@ header {
   border-bottom: rgb(1, 36, 58) solid;
 }
 
+a {
+  color: white;
+}
+
+a.visited, a.hover {
+  color: rgb(79, 81, 75);
+}
+
+#content {
+  display: inline;
+}
+
 #stream {
   float: right;
   padding-top: 11px;
@@ -35,12 +46,12 @@ header {
 }
 
 #mapArea {
+  max-width: 95%;
   width: 750px;
   height: auto;
   float: right;
   margin-top: 75px;
   color: rgb(0, 48, 78);
-  margin-right: 30px;
 }
 
 footer {
@@ -61,33 +72,56 @@ footer {
 /* This is for the weather div.*/
 
 .bg-primary {
-  color: white; 
-  background-color: rgba(25, 38, 12, 0.37) !important; 
+  max-width: 95%;
+  color: white;
+  background-color: rgba(25, 38, 12, 0.37) !important;
   font-size: 20px;
-  margin-top: 75px; 
+  margin-top: 75px;
+}
 
+#weatherDiv {
+  float: left;
 }
 
 .smallText {
-  font-size: 15px; 
+  font-size: 15px;
 }
 
-/* Small devices (landscape phones, 576px and up)*/
+/* Small devices (portrait phones, 320px and up)*/
 
-@media (min-width: 576px) {}
+@media (min-width: 320px) {
+  header {
+    font-size: 35px;
+    padding-left: 5px;
+    height: 60px;
+  }
+
+  #stream{
+    padding-right: 6px;
+  }
+  
+
+}
 
 /* Medium devices (tablets, 768px and up)*/
 
 @media (min-width: 768px) {
 
-  #mapArea{
-    margin-right: 127px;
-  }
 }
 
 /* Large devices (desktops, 992px and up)*/
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  #mapArea {
+    margin-right: 25px;
+  }
+  #weatherDiv {
+    margin-left: 25px;
+  }
+  .bg-primary {
+    margin-top: 75px;
+  }
+}
 
 /* Extra large devices (large desktops, 1200px and up)*/
 
