@@ -104,7 +104,7 @@ footer {
 
 /* Medium devices (tablets, 768px and up)*/
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
   #mapArea{
     width: 90%;
@@ -119,10 +119,11 @@ footer {
 @media (min-width: 992px) {
   #mapArea {
     margin-right: 25px;
-    width: 750px;    
+    width: 60%;    
   }
   #weatherDiv {
     margin-left: 25px;
+    width: 30%;
   }
   .bg-primary {
     margin-top: 75px;
