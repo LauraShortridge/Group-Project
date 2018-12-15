@@ -86,5 +86,4 @@
 
             // each child/post in database
             var currentPost = snap.val();
-
         });
