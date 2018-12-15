@@ -8,16 +8,19 @@ Team Members:
 
 Project Description:
 
-Our app will show current weather and available parking for Case Western Reserve University. It will also provide directions to campus, parking garages, and walking directions to the buildings. 
+Our app will show current weather and available parking for Case Western Reserve University. 
+It will also provide directions to campus, parking garages, and walking directions to the buildings. 
 
 Sketch of the Final Product: (see attachment)
 
 APIs We Are Using:
 
     • OpenWeather
-    Google Maps/Places
+    * Google Maps/Places
 
-New technology: React
+New technology: 
+    * FontAwesome
+    * Sass
 
 Task Breakdown:
     • Develop front-end UI
