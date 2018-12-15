@@ -51,6 +51,7 @@ a.visited, a.hover {
   height: auto;
   float: right;
   margin-top: 75px;
+  margin-right: 25px;
   color: rgb(0, 48, 78);
 }
 
@@ -115,11 +116,20 @@ footer {
     margin-left: 5%;
   }
 
+  #weatherDiv {
+    margin-bottom: 65px;
+  }
+
+  .bg-primary {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Large devices (desktops, 992px and up)*/
 
-@media (min-width: 992px) {
+@media (min-width: 769px) {
   #mapArea {
     margin-right: 25px;
     width: 60%;    
