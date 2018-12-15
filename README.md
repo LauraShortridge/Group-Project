@@ -14,16 +14,14 @@ Sketch of the Final Product: (see attachment)
 
 APIs We Are Using:
 
-    • Geolocation IP: http://ip-api.com/
-    • Coord.co
-    • Spot-Hero
-    • AccuWeather 
+    â€¢ OpenWeather
+    Google Maps/Places
 
 New technology: React
 
 Task Breakdown:
-    • Develop front-end UI
-    • Provide parking lots around campus
-    • Provide information about parking lot
-    • Provide walking directions from lot to specified buildings
-    • Provide weather information for the campus
+    â€¢ Develop front-end UI
+    â€¢ Provide parking lots around campus
+    â€¢ Provide information about parking lot
+    â€¢ Provide walking directions from lot to specified buildings
+    â€¢ Provide weather information for the campus
