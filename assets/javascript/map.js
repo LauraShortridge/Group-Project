@@ -8,6 +8,7 @@
             storageBucket: "",
             messagingSenderId: "3979958216"
         };
+        
         firebase.initializeApp(config);
 
         // global variables
@@ -22,7 +23,7 @@
         function initMap() {
             var CWRU = { lat: 41.50416, lng: -81.60845 };
 
-            map = new google.maps.Map(document.getElementById('map'), {
+            map = new google.maps.Map(document.getElementById('maptest'), {
                 center: CWRU,
                 zoom: 16
             });
