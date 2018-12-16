@@ -47,6 +47,47 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
+      
+      responsiveness
+        /* catch geolocation or user input for address
+        var address = window.location.search.substr(10);
+        geocoder = new google.maps.Geocoder();
+
+        // converts user input address to lat lng coordinates
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                //we call the functions inside the results object in order to get the lat and long.
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                // geocode failed to find position
+            }
+        }); */
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        })
+
+        // google.maps.event.addListener(map, "idle", function(){
+        //     var center = map.getCenter();
+        //     google.maps.event.trigger(map, 'resize'); 
+        //     map.setCenter(center);
+
+        // })
+
+        
+        // update map with all posts from Firebase?
+        database.ref('Posts').on('child_added', function (snap) {
+
+            // each child/post in database
+            var currentPost = snap.val();
+
+        });
     }
 }
 
