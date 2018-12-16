@@ -81,6 +81,13 @@
             infowindow.open(map, marker);
         })
 
+        // google.maps.event.addListener(map, "idle", function(){
+        //     var center = map.getCenter();
+        //     google.maps.event.trigger(map, 'resize'); 
+        //     map.setCenter(center);
+
+        // })
+
         
         // update map with all posts from Firebase?
         database.ref('Posts').on('child_added', function (snap) {

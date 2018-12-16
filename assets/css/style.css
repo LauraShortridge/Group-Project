@@ -28,8 +28,10 @@ header {
 }
 
 #maptest {
-  height: 300px;
-  width: 846px;
+  /* height: 300px;
+  width: 846px; */
+  height: 40vh;
+  width: auto;
 }
 
 a {
@@ -119,6 +121,11 @@ footer {
     margin-right: 5%;
     margin-left: 5%;
   }
+
+  /* #maptest {
+    width: auto;
+    height: 40vh;
+  } */
 
   #weatherDiv {
     margin-bottom: 65px;
