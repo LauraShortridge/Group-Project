@@ -27,6 +27,11 @@ header {
   border-bottom: rgb(1, 36, 58) solid;
 }
 
+#maptest {
+  height: 300px;
+  width: 846px;
+}
+
 a {
   color: white;
 }
@@ -81,7 +86,6 @@ footer {
   border-radius: 50%;
   padding: 6%;
 }
-
 
 #weatherDiv {
   float: left;
