@@ -27,6 +27,11 @@ header {
   border-bottom: rgb(1, 36, 58) solid;
 }
 
+#maptest {
+  height: 30%;
+  width: 80%;
+}
+
 a {
   color: white;
 }
