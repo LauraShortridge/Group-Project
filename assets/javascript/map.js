@@ -18,6 +18,7 @@ var lat, lng;
 var infowindow;
 var CWRU = { lat: 41.50416, lng: -81.60845 };
 var geocoder;
+var marker; 
 
 // initialize map centered on CWRU campus
 function initMap() {
@@ -131,7 +132,7 @@ function callback(results, status) {
             createMarker(results[i]);
         }
       
-      responsiveness
+      //Responsiveness
 
         marker.addListener('click', function () {
             infowindow.open(map, marker);
