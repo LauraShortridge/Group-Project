@@ -1,16 +1,14 @@
 html {
   position: relative;
   min-height: 100%;
-  /* width: 100%; */
 }
 
 body {
+  /*Background*/
   height: 100%;
-  /* width: 100%; */
   background-image: url("../../images/news_2013_binarywalk_web.png");
   background-image: linear-gradient(to right, rgba(0, 48, 78, 0), rgba(0, 48, 78, .7)), url("../../images/news_2013_binarywalk_web.png");
   background-size: cover;
-  /* <------ */
   background-repeat: no-repeat;
   background-position: center center;
   margin-bottom: 65px;
@@ -27,6 +25,8 @@ header {
   border-bottom: rgb(1, 36, 58) solid;
 }
 
+/*links*/
+
 a {
   color: white;
 }
@@ -35,14 +35,16 @@ a.visited, a.hover {
   color: rgb(79, 81, 75);
 }
 
-#content {
-  display: inline;
-}
-
 #stream {
   float: right;
   padding-top: 11px;
   padding-right: 25px;
+}
+
+/*Main Content*/
+
+#content {
+  display: inline;
 }
 
 #mapArea {
@@ -57,7 +59,6 @@ a.visited, a.hover {
 
 footer {
   position: absolute;
-  /* float: clear;  */
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -82,7 +83,6 @@ footer {
   padding: 6%;
 }
 
-
 #weatherDiv {
   float: left;
 }
@@ -99,27 +99,22 @@ footer {
     padding-left: 5px;
     height: 60px;
   }
-
-  #stream{
+  #stream {
     padding-right: 6px;
   }
-  
 }
 
 /* Medium devices (tablets, 768px and up)*/
 
 @media (max-width: 768px) {
-
-  #mapArea{
+  #mapArea {
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
   }
-
   #weatherDiv {
     margin-bottom: 65px;
   }
-
   .bg-primary {
     margin-top: 5px;
     margin-left: auto;
@@ -132,7 +127,7 @@ footer {
 @media (min-width: 769px) {
   #mapArea {
     margin-right: 25px;
-    width: 60%;    
+    width: 60%;
   }
   #weatherDiv {
     margin-left: 25px;
@@ -140,11 +135,9 @@ footer {
   }
   .bg-primary {
     margin-top: 75px;
-
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}

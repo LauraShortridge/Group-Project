@@ -15,7 +15,7 @@ Sketch of the Final Product: (see attachment)
 
 APIs We Are Using:
 
-    • OpenWeather
+    * OpenWeather
     * Google Maps/Places
 
 New technology: 
