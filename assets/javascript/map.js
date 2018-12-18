@@ -26,7 +26,13 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: CWRU,
-        zoom: 16
+        zoom: 16,
+        // If mapTypeControl is changed to true, the style:dropdown takes effect with listed id's
+        mapTypeControl: false,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            mapTypeIds: ['roadmap', 'satellite']
+        }
     });
     // directionsDisplay.setMap(map);
     // directionsDisplay.setPanel(document.getElementById('directions-panel'));
@@ -76,9 +82,10 @@ function AutocompleteDirectionsHandler(map) {
     this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
     this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
+    // ControlPosition.MODIFIERS affect positioning of in-map nav inputs
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
 };
 
 // Sets a listener on a radio button to change the filter type on Places
