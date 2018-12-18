@@ -60,7 +60,7 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
-    this.directionsDisplay.setPanel(document.getElementById('directions-panel'));
+    this.directionsDisplay.setPanel(document.getElementById('directions'));
 
 
 
@@ -136,36 +136,36 @@ AutocompleteDirectionsHandler.prototype.route = function () {
 };
 
 //Directions Function BROKENNNNNN
-function textDirections() {
-    if (!this.originPlaceId || !this.destinationPlaceId) {
-        return;
-    }
-    var me = this;
+// function textDirections() {
+//     if (!this.originPlaceId || !this.destinationPlaceId) {
+//         return;
+//     }
+//     var me = this;
 
-    this.directionsService.route({
-        origin: { 'placeId': this.originPlaceId },
-        destination: { 'placeId': this.destinationPlaceId },
-        travelMode: this.travelMode
-    });
-    directionsSerivce.route(request, function (response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            debugger;
+//     this.directionsService.route({
+//         origin: { 'placeId': this.originPlaceId },
+//         destination: { 'placeId': this.destinationPlaceId },
+//         travelMode: this.travelMode
+//     });
+//     directionsSerivce.route(request, function (response, status) {
+//         if (status == google.maps.DirectionsStatus.OK) {
+//             debugger;
 
-            var result = document.getElementById('directions');
-            result.innerHTML = "";
-            for (var i = 0; i < response.routes[0].legs[0].steps.length; i++); {
-                result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
-            }
-            console.log(response);
-            console.log(textDirections);
-            me.directionsDisplay.setDirections(response);
+//             var result = document.getElementById('directions');
+//             result.innerHTML = "";
+//             for (var i = 0; i < response.routes[0].legs[0].steps.length; i++); {
+//                 result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
+//             }
+//             console.log(response);
+//             console.log(textDirections);
+//             me.directionsDisplay.setDirections(response);
 
-        }
-        else {
-            window.alert('Directions request failed due to ' + status);
-        };
-    });
-}
+//         }
+//         else {
+//             window.alert('Directions request failed due to ' + status);
+//         };
+//     });
+// }
 
 
 function callback(results, status) {
