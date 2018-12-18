@@ -18,7 +18,7 @@ var lat, lng;
 var infowindow;
 var CWRU = { lat: 41.50416, lng: -81.60845 };
 var geocoder;
-var marker; 
+var marker;
 
 // initialize map centered on CWRU campus
 function initMap() {
@@ -42,13 +42,13 @@ function initMap() {
         type: ['parking']
     }, callback);
 
-        /* adds origin/destination inputs, handles route request by travel type  */
+    /* adds origin/destination inputs, handles route request by travel type  */
     new AutocompleteDirectionsHandler(map);
 };
 
-       /**
-        * @constructor
-       */
+/**
+ * @constructor
+*/
 function AutocompleteDirectionsHandler(map) {
     this.map = map;
     this.originPlaceId = null;
@@ -63,10 +63,11 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
 
+
     var originAutocomplete = new google.maps.places.Autocomplete(
-        originInput, {placeIdOnly: true});
+        originInput, { placeIdOnly: true });
     var destinationAutocomplete = new google.maps.places.Autocomplete(
-        destinationInput, {placeIdOnly: true});
+        destinationInput, { placeIdOnly: true });
 
     this.setupClickListener('changemode-walking', 'WALKING');
     this.setupClickListener('changemode-transit', 'TRANSIT');
@@ -80,69 +81,98 @@ function AutocompleteDirectionsHandler(map) {
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
 };
 
-      // Sets a listener on a radio button to change the filter type on Places
-      // Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
+// Sets a listener on a radio button to change the filter type on Places
+// Autocomplete.
+AutocompleteDirectionsHandler.prototype.setupClickListener = function (id, mode) {
     var radioButton = document.getElementById(id);
     var me = this;
-    radioButton.addEventListener('click', function() {
+    radioButton.addEventListener('click', function () {
         me.travelMode = mode;
         me.route();
     });
 };
 
-AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
+AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (autocomplete, mode) {
     var me = this;
     autocomplete.bindTo('bounds', this.map);
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace();
         if (!place.place_id) {
             window.alert("Please select an option from the dropdown list.");
             return;
         }
-            if (mode === 'ORIG') {
-                me.originPlaceId = place.place_id;
-            } 
-            else {
-                me.destinationPlaceId = place.place_id;
-            }
+        if (mode === 'ORIG') {
+            me.originPlaceId = place.place_id;
+        }
+        else {
+            me.destinationPlaceId = place.place_id;
+        }
         me.route();
     });
 };
 
-AutocompleteDirectionsHandler.prototype.route = function() {
+AutocompleteDirectionsHandler.prototype.route = function () {
     if (!this.originPlaceId || !this.destinationPlaceId) {
         return;
     }
     var me = this;
 
     this.directionsService.route({
-        origin: {'placeId': this.originPlaceId},
-        destination: {'placeId': this.destinationPlaceId},
+        origin: { 'placeId': this.originPlaceId },
+        destination: { 'placeId': this.destinationPlaceId },
         travelMode: this.travelMode
-    }, function(response, status) {
-        if (status === 'OK') {
+    }, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+
+            console.log(response);
             me.directionsDisplay.setDirections(response);
-        } 
+            textDirections();
+
+        }
         else {
             window.alert('Directions request failed due to ' + status);
         }
     });
 };
 
+//Directions Function BROKENNNNNN
+function textDirections() {
+    if (!this.originPlaceId || !this.destinationPlaceId) {
+        return;
+    }
+    var me = this;
+
+    this.directionsService.route({
+        origin: { 'placeId': this.originPlaceId },
+        destination: { 'placeId': this.destinationPlaceId },
+        travelMode: this.travelMode
+    });
+    directionsSerivce.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            debugger;
+
+            var result = document.getElementById('directions');
+            result.innerHTML = "";
+            for (var i = 0; i < response.routes[0].legs[0].steps.length; i++); {
+                result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
+            }
+            console.log(response);
+            console.log(textDirections);
+            me.directionsDisplay.setDirections(response);
+
+        }
+        else {
+            window.alert('Directions request failed due to ' + status);
+        };
+    });
+}
+
+
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
-      
-      //Responsiveness
-
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        })
-
-        
         // update map with all posts from Firebase?
         database.ref('Posts').on('child_added', function (snap) {
 
@@ -157,7 +187,7 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: placeLoc,
     });
 
     google.maps.event.addListener(marker, 'click', function () {
@@ -182,7 +212,13 @@ function geoLocation() {
             var markerHere = new google.maps.Marker({
                 map: map,
                 position: pos,
-                title: "You are here!",
+            });
+
+            google.maps.event.addListener(markerHere, 'click', function () {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('You are here.');
+                infoWindow.open(map);
+                map.setCenter(pos);
             });
             // infoWindow.setPosition(pos);
             // infoWindow.setContent('You are here.');
@@ -206,7 +242,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
     $(document).on("click", "#geobutton", function () {
         console.log("button clicked");
-        geoLocation();  
-        infoWindow.close(); 
+        geoLocation();
+        infoWindow.close();
     });
 };
