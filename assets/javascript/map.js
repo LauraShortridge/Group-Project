@@ -60,7 +60,7 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
-    this.directionsDisplay.setPanel(document.getElementById('directions-panel'));
+    this.directionsDisplay.setPanel(document.getElementById('directions'));
 
 
 
