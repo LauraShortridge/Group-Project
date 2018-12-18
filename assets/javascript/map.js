@@ -28,6 +28,8 @@ function initMap() {
         center: CWRU,
         zoom: 16
     });
+    // directionsDisplay.setMap(map);
+    // directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
     infowindow = new google.maps.InfoWindow();
 
@@ -58,6 +60,8 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
+    this.directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
 
 
     var originAutocomplete = new google.maps.places.Autocomplete(
@@ -169,10 +173,6 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> 00c99c49b70db2ae04f7d3b50a975acf4bd60cfc
         // update map with all posts from Firebase?
         database.ref('Posts').on('child_added', function (snap) {
 
