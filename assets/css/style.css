@@ -64,6 +64,13 @@ a.visited, a.hover {
   color: rgb(0, 48, 78);
 }
 
+#directions-panel {
+  height: 100%;
+  /* float: right; */
+  width: 390px;
+  overflow: auto;
+}
+
 /* this is for the map and map inputs */
 
 .controls {

@@ -28,6 +28,8 @@ function initMap() {
         center: CWRU,
         zoom: 16
     });
+    // directionsDisplay.setMap(map);
+    // directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
     infowindow = new google.maps.InfoWindow();
 
@@ -58,6 +60,8 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
+    this.directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
 
     var originAutocomplete = new google.maps.places.Autocomplete(
         originInput, {placeIdOnly: true});
