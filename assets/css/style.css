@@ -88,9 +88,9 @@ a.visited, a.hover {
   color: #fff;
   background-color: #4d90fe;
   margin-top: 5px;
-  margin-left:12px;
+  margin-left:5px;
   height: 25px;
-  width: 310px;
+  width: 220px;
   padding: 5px 11px 0px 11px;
 } 
 
@@ -105,10 +105,10 @@ a.visited, a.hover {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 12px;
+  margin-left: 5px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 185px;
+  width: 220px;
   height: 25px;
 }
 
