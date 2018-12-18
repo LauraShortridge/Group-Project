@@ -172,7 +172,14 @@ function geoLocation() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
+
             console.log(pos);
+
+            var markerHere = new google.maps.Marker({
+                map: map,
+                position: pos,
+                title: "You are here!",
+            });
             // infoWindow.setPosition(pos);
             // infoWindow.setContent('You are here.');
             // infoWindow.open(map);
