@@ -19,6 +19,7 @@ var infowindow;
 var CWRU = { lat: 41.50416, lng: -81.60845 };
 var geocoder;
 var marker;
+var pos; 
 
 // initialize map centered on CWRU campus
 function initMap() {
@@ -67,8 +68,6 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
     this.directionsDisplay.setPanel(document.getElementById('directions'));
-
-
 
     var originAutocomplete = new google.maps.places.Autocomplete(
         originInput, { placeIdOnly: true });
@@ -255,7 +254,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 };
 
 //This pulls the data-values from the drop down menu
-$("#build").on("change", function(){
+$("#build").on("change", function dropDownDestination(){
     let location = $(":selected", this).data("value"); 
     console.log(location);
 });
