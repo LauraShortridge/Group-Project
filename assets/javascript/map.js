@@ -253,3 +253,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.close();
     });
 };
+
+//This pulls the data-values from the drop down menu
+$("#build").on("change", function(){
+    let location = $(":selected", this).data("value"); 
+    console.log(location);
+});
