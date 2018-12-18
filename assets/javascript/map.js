@@ -169,14 +169,10 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
+<<<<<<< HEAD
 
-        //Responsiveness
-
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        })
-
-
+=======
+>>>>>>> 00c99c49b70db2ae04f7d3b50a975acf4bd60cfc
         // update map with all posts from Firebase?
         database.ref('Posts').on('child_added', function (snap) {
 
