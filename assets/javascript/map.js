@@ -61,7 +61,7 @@ function AutocompleteDirectionsHandler(map) {
     this.originPlaceId = null;
     this.destinationPlaceId = null;
     this.travelMode = 'WALKING';
-    var originInput = document.getElementById('origin-input');
+    // var originInput = document.getElementById('origin-input');
     var destinationInput = document.getElementById('destination-input');
     var modeSelector = document.getElementById('mode-selector');
     this.directionsService = new google.maps.DirectionsService;
@@ -69,8 +69,8 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsDisplay.setMap(map);
     this.directionsDisplay.setPanel(document.getElementById('directions'));
 
-    var originAutocomplete = new google.maps.places.Autocomplete(
-        originInput, { placeIdOnly: true });
+    // var originAutocomplete = new google.maps.places.Autocomplete(
+        // originInput, { placeIdOnly: true });
     var destinationAutocomplete = new google.maps.places.Autocomplete(
         destinationInput, { placeIdOnly: true });
 
@@ -78,11 +78,11 @@ function AutocompleteDirectionsHandler(map) {
     this.setupClickListener('changemode-transit', 'TRANSIT');
     this.setupClickListener('changemode-driving', 'DRIVING');
 
-    this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+    // this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
     this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
     // ControlPosition.MODIFIERS affect positioning of in-map nav inputs
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+    // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
 };
@@ -122,17 +122,6 @@ AutocompleteDirectionsHandler.prototype.route = function () {
         return;
     }
     var me = this;
-
-    // var request = {
-    //     origin: { 'location': pos },
-    //     destination: { 'placeId': this.destinationPlaceId },
-    //     travelMode: this.travelMode
-    // };
-    
-    // this.directionsService.route(request, function(response, status) {
-    //     if (status == google.maps.DirectionsStatus.OK) {
-    //         me.directionsDisplay.setDirections(response);
-    //     }
 
     this.directionsService.route({
         origin: { 'location': pos },
