@@ -11,7 +11,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-bottom: 65px;
+  background-attachment: fixed;
+  margin-bottom: 60px;
 }
 
 header {
@@ -67,7 +68,7 @@ a.visited, a.hover {
 #directions {
   height: 100%;
   /* float: right; */
-  width: 390px;
+  width: 730px;
   overflow: auto;
 }
 
@@ -176,12 +177,16 @@ footer {
     margin-right: 5%;
     margin-left: 5%;
   }
+
+  #directions {
+    width: 85%;
+  }
   /* #map {
     width: auto;
     height: 40vh;
   } */
   #weatherDiv {
-    margin-bottom: 65px;
+    margin-bottom: 60px;
   }
   .bg-primary {
     margin-top: 5px;
@@ -196,6 +201,10 @@ footer {
   #mapArea {
     margin-right: 25px;
     width: 60%;
+  }
+
+  #directions {
+    width: 55%;
   }
   #weatherDiv {
     margin-left: 25px;
