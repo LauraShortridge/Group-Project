@@ -118,13 +118,24 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (au
 };
 
 AutocompleteDirectionsHandler.prototype.route = function () {
-    if (!this.originPlaceId || !this.destinationPlaceId) {
+    if (!pos || !this.destinationPlaceId) {
         return;
     }
     var me = this;
 
+    // var request = {
+    //     origin: { 'location': pos },
+    //     destination: { 'placeId': this.destinationPlaceId },
+    //     travelMode: this.travelMode
+    // };
+    
+    // this.directionsService.route(request, function(response, status) {
+    //     if (status == google.maps.DirectionsStatus.OK) {
+    //         me.directionsDisplay.setDirections(response);
+    //     }
+
     this.directionsService.route({
-        origin: { 'placeId': this.originPlaceId },
+        origin: { 'location': pos },
         destination: { 'placeId': this.destinationPlaceId },
         travelMode: this.travelMode
     }, function (response, status) {
@@ -132,7 +143,7 @@ AutocompleteDirectionsHandler.prototype.route = function () {
 
             console.log(response);
             me.directionsDisplay.setDirections(response);
-            textDirections();
+    //         // textDirections();
 
         }
         else {
@@ -208,7 +219,7 @@ function geoLocation() {
     // HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function (position) {
-            let pos = {
+            pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
