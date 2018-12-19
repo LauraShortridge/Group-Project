@@ -8,8 +8,6 @@
 
     <title>Just inCASE</title>
 
-    <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <!--JQuery-->
@@ -57,6 +55,20 @@
         <div class="jumbotron" id="mapArea">
             <!--Greeting-->
             <h1 class="display-4">Welcome to Just inCASE</h1>
+            <hr class="my-4">
+            <!-- Map Area -->
+            <div id="mode-selector" class="controls">
+                <input type="radio" name="type" id="changemode-walking" checked="checked">
+                <label for="changemode-walking">Walking</label>
+
+                <input type="radio" name="type" id="changemode-transit">
+                <label for="changemode-transit">Transit</label>
+
+                <input type="radio" name="type" id="changemode-driving">
+                <label for="changemode-driving">Driving</label>
+            </div>
+            <!--<input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">-->
+            <!--<input id="destination-input" class="controls" type="text" placeholder="Enter a destination location"> -->
             <div class="ui form">
                 <div class="field">
                     <label>Select Destination</label>
@@ -148,52 +160,43 @@
                             Hall</option>
                     </select>
                 </div>
-            </div>
-            <hr class="my-4">
-            <!-- Map Area -->
-            <div id="mode-selector" class="controls">
-                <input type="radio" name="type" id="changemode-walking" checked="checked">
-                <label for="changemode-walking">Walking</label>
 
-                <input type="radio" name="type" id="changemode-transit">
-                <label for="changemode-transit">Transit</label>
+                <div id="map">
 
-                <input type="radio" name="type" id="changemode-driving">
-                <label for="changemode-driving">Driving</label>
-            </div>
-            <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
-            <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
-            <div id="map"></div>
-            <!--Directions Area-->
-            <hr class="my-4">
-            <div id="directions"></div>
-        </div>
-
-        <!--Weather Content Area-->
-        <div class="container" id="weatherDiv">
-            <div class="card bg-primary" style="width: 400px; height: 365px;">
-                <div class="card-body text-center mt-4" id="weather-report">
-                    <!--text-->
-                    <h2 class="text-center">Current Weather</h2>
                 </div>
-            </div>
+                <!--Directions Area-->
+                <hr class="my-4">
+                <div id="directions"></div>
+            
         </div>
     </div>
 
+            <!--Weather Content Area-->
+            <div class="container" id="weatherDiv">
+                <div class="card bg-primary" style="width: 400px; height: 365px;">
+                    <div class="card-body text-center mt-4" id="weather-report">
+                        <!--text-->
+                        <h2 class="text-center">Current Weather</h2>
+                    </div>
+                </div>
+            </div>
 
-    <footer class="footer fixed-bottom">
-        <div class="container">
-            <span>Copyright</span>
-        </div>
-    </footer>
+        
+    
 
-    <!--JS Pages-->
-    <script src="assets/javascript/map.js"></script>
+        <footer class="footer fixed-bottom">
+            <div class="container">
+                <span>Copyright</span>
+            </div>
+        </footer>
 
-    <script src="assets/javascript/weather.js"></script>
-    <!--API-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG4R4gTvPxwGH_Cf_6ISyvdoVw9dDHO-0&libraries=places&callback=initMap"
-        async defer></script>
+        <!--JS Pages-->
+        <script src="assets/javascript/map.js"></script>
+
+        <script src="assets/javascript/weather.js"></script>
+        <!--API-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG4R4gTvPxwGH_Cf_6ISyvdoVw9dDHO-0&libraries=places&callback=initMap"
+            async defer></script>
 
 </body>
 
