@@ -19,7 +19,7 @@ var infowindow;
 var CWRU = { lat: 41.50416, lng: -81.60845 };
 var geocoder;
 var marker;
-var pos; 
+var pos;
 
 // initialize map centered on CWRU campus
 function initMap() {
@@ -27,7 +27,7 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: CWRU,
-        zoom: 16,
+        zoom: 15,
         // If mapTypeControl is changed to true, the style:dropdown takes effect with listed id's
         mapTypeControl: false,
         mapTypeControlOptions: {
@@ -35,19 +35,10 @@ function initMap() {
             mapTypeIds: ['roadmap', 'satellite']
         }
     });
-    // directionsDisplay.setMap(map);
-    // directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
     infowindow = new google.maps.InfoWindow();
 
     geoLocation();
-
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-        location: CWRU,
-        radius: 500,
-        type: ['parking']
-    }, callback);
 
     /* adds origin/destination inputs, handles route request by travel type  */
     new AutocompleteDirectionsHandler(map);
@@ -61,16 +52,16 @@ function AutocompleteDirectionsHandler(map) {
     this.originPlaceId = null;
     this.destinationPlaceId = null;
     this.travelMode = 'WALKING';
-    // var originInput = document.getElementById('origin-input');
-    var destinationInput = document.getElementById('destination-input');
+    var originInput = document.getElementById('origin-input');
+    var destinationInput = document.getElementById('build');
     var modeSelector = document.getElementById('mode-selector');
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     this.directionsDisplay.setMap(map);
     this.directionsDisplay.setPanel(document.getElementById('directions'));
 
-    // var originAutocomplete = new google.maps.places.Autocomplete(
-        // originInput, { placeIdOnly: true });
+    var originAutocomplete = new google.maps.places.Autocomplete(
+        originInput, { placeIdOnly: true });
     var destinationAutocomplete = new google.maps.places.Autocomplete(
         destinationInput, { placeIdOnly: true });
 
@@ -78,11 +69,11 @@ function AutocompleteDirectionsHandler(map) {
     this.setupClickListener('changemode-transit', 'TRANSIT');
     this.setupClickListener('changemode-driving', 'DRIVING');
 
-    // this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+    this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
     this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
     // ControlPosition.MODIFIERS affect positioning of in-map nav inputs
-    // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
 };
@@ -132,47 +123,12 @@ AutocompleteDirectionsHandler.prototype.route = function () {
 
             console.log(response);
             me.directionsDisplay.setDirections(response);
-    //         // textDirections();
-
         }
         else {
             window.alert('Directions request failed due to ' + status);
         }
     });
 };
-
-//Directions Function BROKENNNNNN
-// function textDirections() {
-//     if (!this.originPlaceId || !this.destinationPlaceId) {
-//         return;
-//     }
-//     var me = this;
-
-//     this.directionsService.route({
-//         origin: { 'placeId': this.originPlaceId },
-//         destination: { 'placeId': this.destinationPlaceId },
-//         travelMode: this.travelMode
-//     });
-//     directionsSerivce.route(request, function (response, status) {
-//         if (status == google.maps.DirectionsStatus.OK) {
-//             debugger;
-
-//             var result = document.getElementById('directions');
-//             result.innerHTML = "";
-//             for (var i = 0; i < response.routes[0].legs[0].steps.length; i++); {
-//                 result.innerHTML += response.routes[0].legs[0].steps[i].instructions + "<br>"
-//             }
-//             console.log(response);
-//             console.log(textDirections);
-//             me.directionsDisplay.setDirections(response);
-
-//         }
-//         else {
-//             window.alert('Directions request failed due to ' + status);
-//         };
-//     });
-// }
-
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -226,10 +182,7 @@ function geoLocation() {
                 infoWindow.open(map);
                 map.setCenter(pos);
             });
-            // infoWindow.setPosition(pos);
-            // infoWindow.setContent('You are here.');
-            // infoWindow.open(map);
-            // map.setCenter(pos);
+
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -254,7 +207,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 };
 
 //This pulls the data-values from the drop down menu
-$("#build").on("change", function dropDownDestination(){
-    let location = $(":selected", this).data("value"); 
+$("#build").on("change", function dropDownDestination() {
+    let location = $(":selected", this).data("value");
     console.log(location);
 });
