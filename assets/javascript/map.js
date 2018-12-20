@@ -228,18 +228,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 $("#build").on("change", function(event) {
     event.preventDefault();
     var locations = $(":selected", this).attr("data-value");
-    console.log(locations);
+    // console.log(locations);
     var item = CWRUPlaces.find(item => item.building === locations);
-    console.log(item);
+    // console.log(item);
     destinationPlaceId = {
         lat: item.lat,
         lng: item.log
     };
     console.log(destinationPlaceId);
-    // for (var i = 0; i < CWRUPlaces.length; i++) {
-    //     if (locations === CWRUPlaces.building) {
-    //         CWRUPlaces.address = destinationPlaceId;
-    //         console.log(destinationPlaceId);
-    //     }
-    // }
 });
