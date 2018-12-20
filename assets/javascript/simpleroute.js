@@ -28,7 +28,8 @@ var destinationPlaceId;
 // Ridiculous places and latitude and longitude array
 var CWRUPlaces = [
     {
-        address: "2158 Adelbert Rd. Cleveland, OH",
+        lat: 41.5021734,
+        log: -81.604849,
         building: "Veale Parking Lot"
     },
     {
