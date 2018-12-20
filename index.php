@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Just inCASE</title>
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!--Bootstrap JS-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+    <!--Semantic UI-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+</head>
+
+<body>
+    <header>
+        <!--App Name-->
+        <p>Just inCASE
+            <!--Links for social media-->
+            <!--Twitter-->
+            <a href="https://twitter.com/cwru"><i class="fab fa-twitter-square" id="stream"></i></a>
+            <!--Instagram-->
+            <a href="https://www.instagram.com/cwru/"><i class="fab fa-instagram" id="stream"></i></a>
+            <!--Facebook-->
+            <a href="https://www.facebook.com/casewesternreserve/"><i class="fab fa-facebook-square" id="stream"></i></a>
+        </p>
+    </header>
+
+    <!--Main Conent Area-->
+    <div id="content">
+        <div class="jumbotron" id="mapArea">
+            <!--Greeting-->
+            <h1 class="display-4">Welcome to Just inCASE</h1>
+            <hr class="my-4">
+            <!-- Map Area -->
+            <div id="mode-selector" class="controls">
+                <input type="radio" name="type" id="changemode-walking" checked="checked">
+                <label for="changemode-walking">Walking</label>
+
+                <input type="radio" name="type" id="changemode-transit">
+                <label for="changemode-transit">Transit</label>
+
+                <input type="radio" name="type" id="changemode-driving">
+                <label for="changemode-driving">Driving</label>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <label>Select Destination</label>
+                    <select id="build">
+                        <!--<option class="dropdown-item">Select Your Destination</option>-->
+                        <option class="dropdown-item" value="===">Options</option>
+                        <option class="dropdown-item" data-value="Veale Parking Lot">Veale Parking Lot</option>
+                        <option class="dropdown-item" data-value="A.W. Smith Building">A.W. Smith Building</option>
+                        <option class="dropdown-item" data-value="Adelbert Gymnasium">Adelbert Gymnasium</option>
+                        <option class="dropdown-item" data-value="Adelbert Hall">Adelbert Hall</option>
+                        <option class="dropdown-item" data-value="Amasa Stone Chapel">Amasa Stone Chapel</option>
+                        <option class="dropdown-item" data-value="Bingham Building">Bingham Building</option>
+                        <option class="dropdown-item" data-value="Clapp Hall">Clapp Hall</option>
+                        <option class="dropdown-item" data-value="Clark Hall">Clark Hall</option>
+                        <option class="dropdown-item" data-value="Crawford Hall">Crawford Hall</option>
+                        <option class="dropdown-item" data-value="DeGrace Hall">DeGrace Hall</option>
+                        <option class="dropdown-item" data-value="Eldred Hall">Eldred Hall</option>
+                        <option class="dropdown-item" data-value="Glennan Bldg">Glennan Bldg</option>
+                        <option class="dropdown-item" data-value="Guilford Hall">Guilford Hall</option>
+                        <option class="dropdown-item" data-value="Harkness Chapel">Harkness Chapel</option>
+                        <option class="dropdown-item" data-value="Haydn Hall">Haydn Hall</option>
+                        <option class="dropdown-item" data-value="Hovorka Atrium">Hovorka Atrium</option>
+                        <option class="dropdown-item" data-value="K.H. Smith Building">K.H. Smith Building</option>
+                        <option class="dropdown-item" data-value="Kelvin Smith Library">Kelvin Smith Library</option>
+                        <option class="dropdown-item" data-value="Mather Dance Studio">Mather Dance Studio</option>
+                        <option class="dropdown-item" data-value="Mather House">Mather House</option>
+                        <option class="dropdown-item" data-value="Mills Science Center">Mills Science Center</option>
+                        <option class="dropdown-item" data-value="Morley Chemistry Lab">Morley Chemistry Lab</option>
+                        <option class="dropdown-item" data-value="Nord Hall">Nord Hall</option>
+                        <option class="dropdown-item" data-value="Olin Building">Olin Building</option>
+                        <option class="dropdown-item" data-value="One to One Fitness Center">One to One Fitness Center</option>
+                        <option class="dropdown-item" data-value="Rockefeller Building">Rockefeller Building</option>
+                        <option class="dropdown-item" data-value="Schmitt Auditorium">Schmitt Auditorium</option>
+                        <option class="dropdown-item" data-value="School of Dental Medicine">School of Dental Medicine</option>
+                        <option class="dropdown-item" data-value="School of Law">School of Law</option>
+                        <option class="dropdown-item" data-value="School of Management">School of Management</option>
+                        <option class="dropdown-item" data-value="School of Medicine">School of Medicine</option>
+                        <option class="dropdown-item" data-value="Sears Hall">Sears Hall</option>
+                        <option class="dropdown-item" data-value="Severence Hall">Severence Hall</option>
+                        <option class="dropdown-item" data-value="Thwing Center">Thwing Center</option>
+                        <option class="dropdown-item" data-value="Tinkham Veale Center">Tinkham Veale Center</option>
+                        <option class="dropdown-item" data-value="Tomlinson Hall">Tomlinson Hall</option>
+                        <option class="dropdown-item" data-value="University Book Store">University Book Store</option>
+                        <option class="dropdown-item" data-value="Veale Rec Center">Veale Rec Center</option>
+                        <option class="dropdown-item" data-value="White Building">White Building</option>
+                        <option class="dropdown-item" data-value="Wickenden Building">Wickenden Building</option>
+                        <option class="dropdown-item" data-value="Yost Hall">Yost Hall</option>
+                    </select>
+                </div>
+
+                <div id="map"></div>
+                <!--Directions Area-->
+                <hr class="my-4">
+                <div id="directions"></div>
+
+            </div>
+        </div>
+
+        <!--Weather Content Area-->
+        <div class="container" id="weatherDiv">
+            <div class="card bg-primary" style="width: 400px; height: 365px;">
+                <div class="card-body text-center mt-4" id="weather-report">
+                    <!--text-->
+                    <h2 class="text-center">Current Weather</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- I'm a footer -->
+    <footer class="footer fixed-bottom">
+        <div class="container">
+            <span>Copyright <?php echo date("Y"); ?></span>
+        </div>
+    </footer>
+
+    <!--JS Pages-->
+    <script src="assets/javascript/simpleroute.js"></script>
+    <script src="assets/javascript/weather.js"></script>
+    <!--Google Maps API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG4R4gTvPxwGH_Cf_6ISyvdoVw9dDHO-0&libraries=places&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
