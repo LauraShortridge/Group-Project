@@ -307,7 +307,7 @@ function geoLocation() {
                 lng: position.coords.longitude
             };
 
-            console.log(pos);
+            // console.log(pos);
 
             var markerHere = new google.maps.Marker({
                 map: map,
@@ -340,7 +340,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 
     $(document).on("click", "#geobutton", function () {
-        console.log("button clicked");
+        // console.log("button clicked");
         geoLocation();
         infoWindow.close();
     });
@@ -350,13 +350,13 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 $("#build").on("change", function (event) {
     event.preventDefault();
     var locations = $(":selected", this).attr("data-value");
-    console.log(locations);
+    // console.log(locations);
     var item = CWRUPlaces.find(item => item.building === locations);
-    console.log(item);
+    // console.log(item);
     destinationPlaceId = {
         lat: item.lat,
         lng: item.log
     };
-    console.log(destinationPlaceId);
+    // console.log(destinationPlaceId);
     calcRoute();
 });
