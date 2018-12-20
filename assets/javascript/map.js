@@ -20,6 +20,24 @@ var CWRU = { lat: 41.50416, lng: -81.60845 };
 var geocoder;
 var marker;
 var pos;
+var locations;
+var destinationPlaceId;
+var CWRUPlaces = [
+    {
+        address: "2158 Adelbert Rd. Cleveland, OH",
+        building: "Veale Parking Lot"
+    },
+    {
+        lat: "41.50302531747237",
+        log: "-81.6082799434662",
+        building: "Wickenden Building"
+    },
+    {
+        lat: "41.50361990827657",
+        log: "-81.60892367362976",
+        building: "Yost Hall"
+    }
+];
 
 // initialize map centered on CWRU campus
 function initMap() {
@@ -52,7 +70,7 @@ function AutocompleteDirectionsHandler(map) {
     this.originPlaceId = null;
     this.destinationPlaceId = null;
     this.travelMode = 'WALKING';
-    var originInput = document.getElementById('origin-input');
+    // var originInput = document.getElementById('origin-input');
     var destinationInput = document.getElementById('build');
     var modeSelector = document.getElementById('mode-selector');
     this.directionsService = new google.maps.DirectionsService;
@@ -60,20 +78,20 @@ function AutocompleteDirectionsHandler(map) {
     this.directionsDisplay.setMap(map);
     this.directionsDisplay.setPanel(document.getElementById('directions'));
 
-    var originAutocomplete = new google.maps.places.Autocomplete(
-        originInput, { placeIdOnly: true });
-    var destinationAutocomplete = new google.maps.places.Autocomplete(
-        destinationInput, { placeIdOnly: true });
+    // var originAutocomplete = new google.maps.places.Autocomplete(
+        // originInput, { placeIdOnly: true });
+    // var destinationAutocomplete = new google.maps.places.Autocomplete(
+        // destinationInput, { placeIdOnly: true });
 
     this.setupClickListener('changemode-walking', 'WALKING');
     this.setupClickListener('changemode-transit', 'TRANSIT');
     this.setupClickListener('changemode-driving', 'DRIVING');
 
-    this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-    this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+    // this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+    // this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
     // ControlPosition.MODIFIERS affect positioning of in-map nav inputs
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+    // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
 };
@@ -109,14 +127,14 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (au
 };
 
 AutocompleteDirectionsHandler.prototype.route = function () {
-    if (!pos || !this.destinationPlaceId) {
+    if (!pos || !destinationPlaceId) {
         return;
     }
     var me = this;
 
     this.directionsService.route({
         origin: { 'location': pos },
-        destination: { 'placeId': this.destinationPlaceId },
+        destination: { 'placeId': destinationPlaceId },
         travelMode: this.travelMode
     }, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -207,7 +225,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 };
 
 //This pulls the data-values from the drop down menu
-$("#build").on("change", function dropDownDestination() {
-    let location = $(":selected", this).data("value");
-    console.log(location);
+$("#build").on("change", function(event) {
+    event.preventDefault();
+    var locations = $(":selected", this).attr("data-value");
+    console.log(locations);
+    if (locations === CWRUPlaces.building) {
+        CWRUPlaces.address = destinationPlaceId;
+    }
 });
