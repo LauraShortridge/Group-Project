@@ -32,7 +32,7 @@ It will also provide directions to campus, parking garages, and walking directio
     • Provide walking directions from lot to specified buildings
     • Provide weather information for the campus
 
-New technology: 
+### New technology: 
     • Develop front-end UI
     • Provide parking lots around campus
     • Provide information about parking lot
@@ -40,7 +40,7 @@ New technology:
     • Provide weather information for the campus
 
 
-Task Breakdown:
+### Task Breakdown:
     • Develop front-end UI
     • Provide parking lots around campus
     • Provide information about parking lot
