@@ -80,15 +80,15 @@ function AutocompleteDirectionsHandler(map) {
 
     // var originAutocomplete = new google.maps.places.Autocomplete(
         // originInput, { placeIdOnly: true });
-    // var destinationAutocomplete = new google.maps.places.Autocomplete(
-        // destinationInput, { placeIdOnly: true });
+    var destinationAutocomplete = new google.maps.places.Autocomplete(
+        destinationInput, { placeIdOnly: true });
 
     this.setupClickListener('changemode-walking', 'WALKING');
     this.setupClickListener('changemode-transit', 'TRANSIT');
     this.setupClickListener('changemode-driving', 'DRIVING');
 
     // this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-    // this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+    this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
     // ControlPosition.MODIFIERS affect positioning of in-map nav inputs
     // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
@@ -127,14 +127,14 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (au
 };
 
 AutocompleteDirectionsHandler.prototype.route = function () {
-    if (!pos || !destinationPlaceId) {
+    if (!pos || !this.destinationPlaceId) {
         return;
     }
     var me = this;
 
     this.directionsService.route({
         origin: { 'location': pos },
-        destination: { 'placeId': destinationPlaceId },
+        destination: { 'placeId': this.destinationPlaceId },
         travelMode: this.travelMode
     }, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -229,10 +229,15 @@ $("#build").on("change", function(event) {
     event.preventDefault();
     var locations = $(":selected", this).attr("data-value");
     console.log(locations);
-    for (var i = 0; i < CWRUPlaces.length; i++) {
-        if (locations === CWRUPlaces.building) {
-            CWRUPlaces.address = destinationPlaceId;
-            console.log(destinationPlaceId);
-        }
-    }
+    var item = CWRUPlaces.find(item => item.building === locations);
+    console.log(item.address);
+    // item.address = destinationPlaceId;
+    destinationPlaceId = item.address;
+    console.log(destinationPlaceId);
+    // for (var i = 0; i < CWRUPlaces.length; i++) {
+    //     if (locations === CWRUPlaces.building) {
+    //         CWRUPlaces.address = destinationPlaceId;
+    //         console.log(destinationPlaceId);
+    //     }
+    // }
 });
