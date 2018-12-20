@@ -229,7 +229,10 @@ $("#build").on("change", function(event) {
     event.preventDefault();
     var locations = $(":selected", this).attr("data-value");
     console.log(locations);
-    if (locations === CWRUPlaces.building) {
-        CWRUPlaces.address = destinationPlaceId;
+    for (var i = 0; i < CWRUPlaces.length; i++) {
+        if (locations === CWRUPlaces.building) {
+            CWRUPlaces.address = destinationPlaceId;
+            console.log(destinationPlaceId);
+        }
     }
 });
