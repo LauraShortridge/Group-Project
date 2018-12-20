@@ -85,6 +85,11 @@ a.visited, a.hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+#build {
+  max-width: 75%;
+  width: 400px;
+}
+
 #mode-selector {
   color: #fff;
   background-color: #4d90fe;
