@@ -21,15 +21,15 @@ var geocoder;
 var marker;
 var pos;
 var locations;
-var destinationPlaceId;
+var destinationPlaceId1;
 var CWRUPlaces = [
     {
         address: "2158 Adelbert Rd. Cleveland, OH",
         building: "Veale Parking Lot"
     },
     {
-        lat: "41.50302531747237",
-        log: "-81.6082799434662",
+        lat: 41.50302531747237,
+        log: -81.6082799434662,
         building: "Wickenden Building"
     },
     {
@@ -127,14 +127,14 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (au
 };
 
 AutocompleteDirectionsHandler.prototype.route = function () {
-    if (!pos || !destinationPlaceId) {
+    if (!pos || !destinationPlaceId1) {
         return;
     }
     var me = this;
 
     this.directionsService.route({
         origin: { 'location': pos },
-        destination: { 'placeId': destinationPlaceId },
+        destination: { 'placeId': destinationPlaceId1 },
         travelMode: this.travelMode
     }, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -228,12 +228,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 $("#build").on("change", function(event) {
     event.preventDefault();
     var locations = $(":selected", this).attr("data-value");
-    // console.log(locations);
+    console.log(locations);
     var item = CWRUPlaces.find(item => item.building === locations);
-    // console.log(item);
-    destinationPlaceId = {
+    console.log(item);
+    destinationPlaceId1 = {
         lat: item.lat,
         lng: item.log
     };
-    console.log(destinationPlaceId);
+    console.log(destinationPlaceId1);
 });
